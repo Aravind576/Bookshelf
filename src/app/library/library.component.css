@@ -1,0 +1,96 @@
+.headerClass {
+    background-color: burlywood;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.headerText {
+    flex: 1;
+    padding-left: 15px;
+
+}
+
+.linkclass {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 15px;
+}
+
+.navbarClass {
+    flex: 1;
+    height: fit-content;
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+    margin-right: 50px;
+}
+
+.menuiconclass {
+    width: 30px;
+    height: 30px;
+    background-color: burlywood;
+    border-radius: 20px;
+}
+
+.asidecontainer {
+    width: 15%;
+    height: 100vh;
+    background-color: bisque;
+    overflow: scroll;
+    padding-right: 25px;
+}
+
+.sidemenuul {
+    border: 0;
+    margin: 0;
+}
+
+.mat-tree-node {
+    background-color: bisque;
+}
+
+.buttonpadding {
+    display: none;
+}
+
+.bookdisplay {
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(98, 172, 92);
+}
+
+.maincontent {
+    display: flex;
+}
+
+.displaycontainer {
+    width: 350px;
+    height: 600px;
+    background-color: blue;
+    margin: 20px;
+    border-radius: 20px;
+
+}
+
+.imageclass {
+    width: 300px;
+    height: 400px;
+    padding-top: 25px;
+}
+.displaycontainertop{
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    border-radius: 20px 20px  0px 0px;
+}
+.displaycontainerbottom{
+    background-color: antiquewhite;
+    height: 200px;
+    border-radius: 0 0 20px 20px ;
+    padding: 0 25px 0px 25px;
+}
