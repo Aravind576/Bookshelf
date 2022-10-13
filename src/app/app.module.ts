@@ -9,8 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { MylibraryComponent } from './mylibrary/mylibrary.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from "@angular/material/icon";
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { freeapiservices } from './Services/apiservices';
 
 
 @NgModule({
@@ -28,9 +28,10 @@ import { MatIconModule } from "@angular/material/icon";
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTreeModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [freeapiservices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -33,35 +33,12 @@
                 {{node.name}}
             </mat-tree-node>
         </mat-tree>
-        <input type="button" (click)=testbutton()>
+        <!-- <input type="button" (click)=testbutton()> -->
     </div>
-    <div class="bookdisplay" id="bookdisplay">
-        <div class="displaycontainer">
-            <div class="displaycontainertop">
-                <img src="../../assets/book-covers-big-2019101610.jpg-1300.jpg" class="imageclass">
-            </div>
-            <div class="displaycontainerbottom">
-                <span>
-                    <h4> It is a great book by the author grrm blah blah blah blah blah blah blah blah blah blah the end
-                    </h4>
-                </span>
-                <span>
-                    <h1>
-                        <strong>
-                            Ratings:-
-                        </strong>
-                        4.5
-                    </h1>
-                </span>
-                <span>
-                    <h1>
-                        <strong>
-                            Author:-
-                        </strong>
-                        etho oruthan
-                    </h1>
-                </span>
-            </div>
-        </div>
+    <div class="bookdisplay" id="bookdisplay" >
+      {{lstbooks}}
     </div>
 </div>
+
+
+<!--*ngFor="let temp of lstbooks"-->

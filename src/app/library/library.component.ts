@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatTreeFlatDataSource, MatTreeFlattener }
   from "@angular/material/tree";
+  import { freeapiservices } from '../Services/apiservices';
+  import { MyLibraryClass } from '../Classes/MyLibraryClass';
 interface SideBar {
   name: string;
   children?: SideBar[];
@@ -70,14 +72,17 @@ export class LibraryComponent implements OnInit {
   dataSource = new MatTreeFlatDataSource(
     this.treeControl, this.treeFlattener);
 
-  constructor() {
+  constructor(private _freeapiservices : freeapiservices) {
 
     this.dataSource.data = FAMILY_TREE;
+    
   }
-
+  lstbooks: MyLibraryClass[] = [];
   hasChild = (_: number,
     node: ExampleFlatNode) => node.expandable;
+  
   ngOnInit(): void {
+    this._freeapiservices.getBooks().subscribe(data=>{this.lstbooks=data;});
   }
   menuFunction() {
     let elementasidecontainer = document.getElementById('asidecontainer');
@@ -90,6 +95,8 @@ export class LibraryComponent implements OnInit {
     }
 
   }
+  
+    
   testbutton() {
     let testbtn = document.createElement("div")
     let testimg = document.createElement("img")
@@ -135,7 +142,7 @@ export class LibraryComponent implements OnInit {
     {
       h41.className="h41";
       h41.id="h41id";
-      h41.innerHTML=" It is a great book by the author grrm blah blah blah blah blah blah blah blah blah blah the end";
+      
       document.getElementById("span1id")!.append(h41);
     }
     {
@@ -143,7 +150,7 @@ export class LibraryComponent implements OnInit {
       document.getElementById("testbottomblockid")!.append(span2);
       h11.id="h11id";
       document.getElementById("span2id")!.append(h11);
-      strang1.innerHTML=" Ratings:-4.5";
+      
       document.getElementById("h11id")!.append(strang1);
     }
     {
@@ -151,10 +158,10 @@ export class LibraryComponent implements OnInit {
       document.getElementById("testbottomblockid")!.append(span3);
       h12.id="h12id";
       document.getElementById("span3id")!.append(h12);
-      strang2.innerHTML=" Author:-arro orall";
+      
       document.getElementById("h12id")!.append(strang2);
     }
   }
 
-
+  
 }

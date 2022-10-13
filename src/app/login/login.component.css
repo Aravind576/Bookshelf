@@ -1,0 +1,16 @@
+.wrapper{
+    height: 100%;
+    width: 100%;
+    background-color: aqua;
+}
+.FormContainer{
+    position: relative;
+    left: 40%;
+    top: 40%;
+    padding: 50px;
+    background-color:aquamarine;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0 40px 0 40px;
+
+}
