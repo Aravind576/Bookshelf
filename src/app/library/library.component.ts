@@ -80,9 +80,9 @@ export class LibraryComponent implements OnInit {
   lstbooks: MyLibraryClass[] = [];
   hasChild = (_: number,
     node: ExampleFlatNode) => node.expandable;
-  
+    // data=>{this.lstbooks=data;}
   ngOnInit(): void {
-    this._freeapiservices.getBooks().subscribe(data=>{this.lstbooks=data;});
+    this._freeapiservices.getBooks().subscribe();
   }
   menuFunction() {
     let elementasidecontainer = document.getElementById('asidecontainer');
