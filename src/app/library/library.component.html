@@ -35,8 +35,16 @@
         </mat-tree>
         <!-- <input type="button" (click)=testbutton()> -->
     </div>
-    <div class="bookdisplay" id="bookdisplay" >
-      {{lstbooks}}
+    <div class="bookdisplay" id="bookdisplay" *ngFor="let temp of lstbooks">
+      {{testbutton(temp)}}
+        <!-- <table>
+        <tr>
+            <th>name</th>
+        </tr>
+        <tr *ngFor="let temp of lstbooks">
+            <td>{{temp.name}}</td>
+        </tr>
+      </table> -->
     </div>
 </div>
 

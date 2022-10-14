@@ -71,18 +71,19 @@ export class LibraryComponent implements OnInit {
 
   dataSource = new MatTreeFlatDataSource(
     this.treeControl, this.treeFlattener);
-
+    lstbooks: MyLibraryClass[] = [];
   constructor(private _freeapiservices : freeapiservices) {
 
     this.dataSource.data = FAMILY_TREE;
     
   }
-  lstbooks: MyLibraryClass[] = [];
+  
   hasChild = (_: number,
     node: ExampleFlatNode) => node.expandable;
-    // data=>{this.lstbooks=data;}
-  ngOnInit(): void {
-    this._freeapiservices.getBooks().subscribe();
+    // 
+  ngOnInit(){
+    this._freeapiservices.getBooks().subscribe((data)=>{this.lstbooks=data;});
+    console.log(this.lstbooks)
   }
   menuFunction() {
     let elementasidecontainer = document.getElementById('asidecontainer');
@@ -97,70 +98,40 @@ export class LibraryComponent implements OnInit {
   }
   
     
-  testbutton() {
-    let testbtn = document.createElement("div")
-    let testimg = document.createElement("img")
-    let testopblock = document.createElement("div")
-    let testbottomblock = document.createElement("div")
-    let span1 = document.createElement("span")
-    let span2 = document.createElement("span")
-    let span3 = document.createElement("span")
-    let h41 = document.createElement("h4")
-    let h11 = document.createElement("h1")
-    let h12 = document.createElement("h1");
-    let strang1 = document.createElement("strong")
-    let strang2 = document.createElement("strong")
-    {
-      testbtn.className = "displaycontainer";
-      testbtn.id = "testbtnid";
-      testbtn.setAttribute("style", "width:350px;height: 500px;background-color: blue;margin: 20px;border-radius: 20px;")
-      document.getElementById("bookdisplay")!.append(testbtn);
-    }
-    {
-      testopblock.className = "displaycontainertop";
-      testopblock.id = "testopblockid";
-      testopblock.setAttribute("style", "display: flex;justify-content: center;background-color: whitesmoke;border-radius: 20px 20px  0px 0px;")
-      document.getElementById("testbtnid")!.append(testopblock);
-    }
-    {
-      testimg.className = "imageclass";
-      testimg.setAttribute("style", " width: 300px;height: 400px;padding-top: 25px;")
-      testimg.setAttribute("src", " ../../assets/book-covers-big-2019101610.jpg-1300.jpg")
-      document.getElementById("testopblockid")!.append(testimg);
-    }
-    {
-      testbottomblock.className = "displaycontainerbottom";
-      testbottomblock.id = "testbottomblockid";
-      testbottomblock.setAttribute("style", "  background-color: antiquewhite;height: 200px;border-radius: 0 0 20px 20px ;padding: 0 25px 0px 25px;")
-      document.getElementById("testbtnid")!.append(testbottomblock);
-    }
-    {
-      span1.className="span1";
-      span1.id="span1id";
-      document.getElementById("testbottomblockid")!.append(span1);
-    }
-    {
-      h41.className="h41";
-      h41.id="h41id";
-      
-      document.getElementById("span1id")!.append(h41);
-    }
-    {
-      span2.id="span2id";
-      document.getElementById("testbottomblockid")!.append(span2);
-      h11.id="h11id";
-      document.getElementById("span2id")!.append(h11);
-      
-      document.getElementById("h11id")!.append(strang1);
-    }
-    {
-      span3.id="span3id";
-      document.getElementById("testbottomblockid")!.append(span3);
-      h12.id="h12id";
-      document.getElementById("span3id")!.append(h12);
-      
-      document.getElementById("h12id")!.append(strang2);
-    }
+  testbutton(temp:MyLibraryClass) {
+    let bookContainer = document.createElement("div")
+        	var bookContainerid=bookContainer.id="bookContainer"+temp.id;
+    let imagecontainer = document.createElement("img") 
+        	var imagecontainerid=imagecontainer.id="imagecontainer"+temp.id;
+    let topblock = document.createElement("div")
+        	var topblockid=topblock.id="topblock"+temp.id;
+    let bottomblock = document.createElement("div")
+        	var bottomblockid=bottomblock.id="bottomblock"+temp.id;
+    let spanName = document.createElement("span")
+        	var spanNameid=spanName.id="spanName"+temp.id;
+    let spanAuthorname = document.createElement("span")
+    		var spanAuthornameid=spanAuthorname.id="spanAuthorname"+temp.id;
+    let spanRating = document.createElement("span")
+    		var spanRatingid=spanRating.id="spanRating"+temp.id;
+    let spanDescription = document.createElement("span")
+    		var spanDescriptionid=spanDescription.id="spanDescription"+temp.id;
+    let nameHeading = document.createElement("h4")
+    		var nameHeadingid=nameHeading.id="nameHeading"+temp.id;
+    let AuthornameHeading = document.createElement("h1")
+    		var AuthornameHeadingid=AuthornameHeading.id="AuthornameHeading"+temp.id;
+    let RatingHeading = document.createElement("h1");
+    		var RatingHeadingid=RatingHeading.id="RatingHeading"+temp.id;
+    let descriptionHeading = document.createElement("h1");
+    		var descriptionHeadingid=descriptionHeading.id="descriptionHeading"+temp.id;
+    let strangName = document.createElement("strong")
+    		var strangNameid=strangName.id="strangName"+temp.id;
+    let strangAuthorName = document.createElement("strong")
+    		var strangAuthorNameid=strangAuthorName.id="strangAuthorName"+temp.id;
+    
+			{
+				document.getElementById("imagecontainer"+temp.id)
+				document.getElementById("bookdispaly")?.append
+			}
   }
 
   
